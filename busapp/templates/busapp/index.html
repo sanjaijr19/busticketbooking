@@ -1,0 +1,54 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready( function () {
+        $('#mytable').DataTable();
+
+    } );
+    </script>
+</head>
+<body>
+<h1 >
+    Driver Details
+</h1>
+<table id="mytable" class="display"  cellpadding="1" cellspacing="1" border="1">
+    <thead>
+        <tr>
+
+            <th> Driver name</th>
+            <th> age</th>
+            <th> Contact Number</th>
+            <th> Bus Number</th>
+            <th> options</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            {% if emp_list %}
+            {% for template in emp_list %}
+            <td>{{template.drivername}}</td>
+            <td>{{template.age}}</td>
+            <td>{{template.contact_no}}</td>
+            <td>{{template.bus_no}}</td>
+            <td><a href="/update/{{template.id}}"> update </a> &nbsp; &nbsp;  <a href ="/delete/{{template.id}}"> Delete</a> </td>
+
+        </tr>
+
+    </tbody>
+      {% endfor %}
+      {% endif %}
+</table>
+<p >
+    <a   href = "/create" >  <button  type="button" >  Add drivers details</button>  </a>
+        </p>
+
+</body>
+
+</html>

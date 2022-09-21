@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/html">
+{% extends "busapp/base.html" %}
+{% block content %}
+
+    <h1> update Driver details</h1>
+    <form  method="POST">
+        {%csrf_token %}
+      drivername<input type="text" name="drivername" value="{{emp_data.drivername}}"><br>
+      age<input type="number" name="age" value="{{emp_data.age}}"><br>
+      contactnumber<input type="number" name="contact_no" value="{{emp_data.contact_no}}"><br>
+      Busnumber <input  type="text" name="bus_no" value="{{emp_data.bus_no}}"><br>
+<!--      employeedesignation <input type="radio" name="empdesignation" value="{{template.designation}}">-->
+<!--      <label for="empdesignation">empdesignatiomn:</label>-->
+<!--      <select name="programmer" id="designation">-->
+<!--      <option value="programmer">programmer</option>-->
+<!--    <option value="manager">manager</option>-->
+<!--  </select>-->
+
+
+       <input type="submit" value="update details">
+    </form>
+
+  {% endblock %}
+</html>

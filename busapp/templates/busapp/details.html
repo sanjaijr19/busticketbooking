@@ -1,0 +1,12 @@
+<h1> REGISTER </h1>
+    <form action="create" method="post">
+         {% csrf_token %}
+         <input type="text" name="drivername" placeholder="drivername"><br>
+         <input type="number" name="age" placeholder="age"><br>
+         <input type="number" name="contact_no" placeholder="contact_no"><br>
+         <input type="text" name="bus_no" placeholder="bus_no"><br>
+
+     <a  href = "/create">  <button style="color:red" type="button">  submit </button>  </a>
+<!--        <input type="submit" value="add">-->
+<!--&lt;!&ndash;         <input type="submit" value="submit">&ndash;&gt;-->
+    </form>
